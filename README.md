@@ -11,9 +11,6 @@ Built using **HTML, CSS, and JavaScript**
 - 📦 **Product gallery** on the home page (`index.html`)  
 - 🛍 **Shopping cart page** (`cart.html`) with add/remove functionality and totals calculation  
 - 🎨 **Responsive design** with clean and simple UI  
-- ⚡ **No frameworks** — pure HTML, CSS, and JS  
-
-> ⚠️ This is a **demo project**: no payments, accounts, or backend.
 
 ---
 
@@ -33,7 +30,6 @@ MyShop/
 ├─ scripts/ # ⚙️ JS files (e.g., cart.js, app.js)
 └─ assets/ # 🖼 Images, icons, etc.
 
-*(Keep `index.html` at the root for GitHub Pages deployment)*
 
 ---
 
