@@ -1,4 +1,4 @@
-# 🛒 MyShop – Simple Storefront (HTML/CSS/JS)
+# 🛒 MyShop – (HTML/CSS/JS)
 
 A lightweight, front-end demo of an online store with product listings and a shopping cart.  
 Built using **HTML, CSS, and JavaScript** only — no backend required.
