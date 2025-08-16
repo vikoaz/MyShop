@@ -1,7 +1,7 @@
 # 🛒 MyShop – (HTML/CSS/JS)
 
 A lightweight, front-end demo of an online store with product listings and a shopping cart.  
-Built using **HTML, CSS, and JavaScript** only — no backend required.
+Built using **HTML, CSS, and JavaScript** 
 
 🌐 **Live Demo:** [MyShop on GitHub Pages](https://vikoaz.github.io/MyShop/)
 
