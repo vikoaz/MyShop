@@ -1,0 +1,41 @@
+body {
+
+
+    background-image: url(HomePhoto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+form {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120%;
+    text-align: center;
+}
+
+h1 {
+
+    font-family: fantasy;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 240%;
+}
+
+button {
+
+    background-color: rgba(105, 109, 93, 255);
+    align-items: center;
+
+    border-radius: 30%;
+
+    border: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #63d3f1 100%);
+}
+
+p {
+    text-align: center;
+}
+
+.textStyle {
+
+    font-family: cursive
+}

@@ -1,0 +1,75 @@
+
+body{
+	
+    background-image: url(HomePhoto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  max-width:1200px;
+  margin:0 auto;
+  padding:16px;
+  font-family:system-ui, Segoe UI, Roboto, Arial;
+
+}
+
+h1 {
+
+    font-family: fantasy;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 240%;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+}
+a{text-decoration:none;color:#333}
+h1{margin:10px 0 20px}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+  background:#fff;
+}
+th,td{
+  border-bottom:1px solid #e8e8e8;
+  padding:10px;
+  text-align:left;
+}
+tr:last-child td{border-bottom:none}
+
+img.thumb{
+  width:56px;height:56px;object-fit:cover;border-radius:6px;
+  margin-right:10px;vertical-align:middle
+}
+.row-title{display:flex;align-items:center;gap:10px}
+.qty{width:70px;padding:6px}
+
+.actions button{
+  padding:6px 10px;border:1px solid #ddd;background:#fafafa;
+  border-radius:6px;cursor:pointer
+}
+.total{
+  display:flex;gap:20px;justify-content:flex-end;
+  align-items:center;margin-top:14px
+}
+.clear{
+  border:1px solid #e05a5a;background:#ffecec;color:#a33;
+  padding:8px 12px;border-radius:8px;cursor:pointer
+}
+.back{
+  border:1px solid #ddd;background:#f6f6f6;color:#333;
+  padding:8px 12px;border-radius:8px;cursor:pointer
+}
+.cart-link {
+  color: #00ffcc;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.cart-link:hover {
+  color: #ff6600;  /* כתום כשעוברים עם העכבר */
+}

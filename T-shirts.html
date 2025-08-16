@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T-shirts</title>
+  <link rel="stylesheet" href="T-shirts.css" />
+  <script src="cart.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <h1>Hello and welcome to Viko's shop</h1>
+  <a href="cart.html" class="cart-link">🛒 Cart (<span data-cart-count>0</span>)</a>
+</header>
+
+<p class="center">Here are some of our T-shirts 👕:</p>
+<p class="center">Hover over the items to see their prices</p>
+
+<div class="item-container">
+  <!-- Shirt 1 -->
+  <div class="item">
+    <img class="men" id="shirt1-img" title="80 ₪" src="shirt1.jpg" alt="">
+    <select class="color-select" id="shirt1-color">
+      <option value="shirt1.jpg" data-color="Default" selected>Default</option>
+      <option value="shirt1 - Black.webp" data-color="Black">Black</option>
+      <option value="shirt1 - Cream.webp" data-color="Cream">Cream</option>
+    </select>
+
+    <label for="size1" class="sizes-label">Choose your size:</label>
+    <select name="size" id="size1" class="sizes">
+      <option value=""></option>
+      <option value="XS">XS</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
+    <button
+      id="shirt1-add"
+      class="add-to-cart"
+      data-add-to-cart
+      data-id="shirt1"
+      data-title="T-shirt 1"
+      data-price="80"
+      data-color="Default"
+      data-size=""
+      data-variant=""
+      data-image="shirt1.jpg"
+      data-qty="1">🛒 Add to Cart</button>
+  </div>
+
+  <!-- Shirt 2 -->
+  <div class="item">
+    <img class="men" id="shirt2-img" title="80 ₪" src="shirt2.webp" alt="">
+    <select class="color-select" id="shirt2-color">
+      <option value="shirt2.webp" data-color="Default" selected>Default</option>
+      <option value="shirt2 - Stone.webp" data-color="Stone">Stone</option>
+      <option value="shirt2 - white.webp" data-color="White">White</option>
+    </select>
+
+    <label for="size2" class="sizes-label">Choose your size:</label>
+    <select name="size" id="size2" class="sizes">
+      <option value=""></option>
+      <option value="XS">XS</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
+    <button
+      id="shirt2-add"
+      class="add-to-cart"
+      data-add-to-cart
+      data-id="shirt2"
+      data-title="T-shirt 2"
+      data-price="80"
+      data-color="Default"
+      data-size=""
+      data-variant=""
+      data-image="shirt2.webp"
+      data-qty="1">🛒 Add to Cart</button>
+  </div>
+
+  <!-- Shirt 3 -->
+  <div class="item">
+    <img class="men" id="shirt3-img" title="90 ₪" src="shirt3.webp" alt="">
+    <select class="color-select" id="shirt3-color">
+      <option value="shirt3.webp" data-color="Default" selected>Default</option>
+      <option value="shirt3 - Grey.webp" data-color="Grey">Grey</option>
+      <option value="shirt3 - Blue.webp" data-color="Blue">Blue</option>
+    </select>
+
+    <label for="size3" class="sizes-label">Choose your size:</label>
+    <select name="size" id="size3" class="sizes">
+      <option value=""></option>
+      <option value="XS">XS</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
+    <button
+      id="shirt3-add"
+      class="add-to-cart"
+      data-add-to-cart
+      data-id="shirt3"
+      data-title="T-shirt 3"
+      data-price="90"
+      data-color="Default"
+      data-size=""
+      data-variant=""
+      data-image="shirt3.webp"
+      data-qty="1">🛒 Add to Cart</button>
+  </div>
+</div>
+
+<p><a href="index.html"><button>Homepage</button></a></p>
+
+<script>
+  function wireItem(imgId, selectId, sizeId, btnId) {
+    const img  = document.getElementById(imgId);
+    const sel  = document.getElementById(selectId);
+    const size = document.getElementById(sizeId);
+    const btn  = document.getElementById(btnId);
+
+    function updateFromColor() {
+      const opt = sel.options[sel.selectedIndex];
+      img.src = opt.value;
+      btn.dataset.color = opt.dataset.color || '';
+      btn.dataset.image = opt.value || '';
+    }
+    function updateFromSize() {
+      btn.dataset.size = size.value || '';
+    }
+    sel.addEventListener('change', updateFromColor);
+    size.addEventListener('change', updateFromSize);
+    updateFromColor();
+    updateFromSize();
+  }
+
+  wireItem('shirt1-img','shirt1-color','size1','shirt1-add');
+  wireItem('shirt2-img','shirt2-color','size2','shirt2-add');
+  wireItem('shirt3-img','shirt3-color','size3','shirt3-add');
+</script>
+</body>
+</html>

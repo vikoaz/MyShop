@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contant Page</title>
+    <link rel="stylesheet" href="Contant.css">
+</head>
+
+<body>
+
+    <h1>Contact Page</h1>
+
+
+    <form autocomplete="on" method="post">
+        <label for="fname" class="textStyle"> Enter first name :</label><br>
+        <input type="text" id="fname" placeholder="first name"><br>
+
+        <label for="lname" class="textStyle"> Enter last name :</label><br>
+        <input type="text" id="lname" placeholder="last name"><br>
+
+        <p class="textStyle">enter your gender : </p>
+
+        <input type="radio" id="Male" name="gender" value="Male">
+        <label for="Male" class="textStyle"> Male </label>
+
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="feMale" class="textStyle"> female </label> <br><br>
+
+
+        <label for="clothing" class="textStyle"> enter the items you prefer us to notify you when there are updates :
+        </label>
+        <select name="clothing" id="clothing">
+            <option value="men's clothing"> men's clothing</option>
+            <option value="women's clothing"> women's clothing</option>
+            <option value="both"> both</option>
+
+        </select><br><br>
+
+
+        <label for="date" class="textStyle"> When are you comfortable talking? :</label>
+        <input type="date" name="dates" id="date"> <br><br>
+
+        <label for="tel" class="textStyle">Enter your tel :</label>
+        <input type="tel" name="tel" id="tel" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder="xxx - xxx - xxxx"> <br><br>
+
+        <input type="checkbox" name="conditions" id="cond" required>
+        <label for="cond" class="textStyle"> i agree to the terms and conditions</label> <a
+            href="https://www.maniajeans.co.il/terms" target="_blank">terms
+            and
+            conditions</a><br><br>
+
+        <input type="submit">
+        <input type="reset"><br><br>
+
+
+        <a href="https://maps.app.goo.gl/KwuFcCNxZA1GXjV1A" target="_blank">Click here to get our location </a>
+
+
+
+
+    </form>
+
+    <p> <a href="index.html">
+
+            <button>Homepage
+            </button>
+
+
+        </a></p>
+</body>
+
+</html>

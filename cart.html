@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cart – Viko's Shop</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <header>
+    <a class="back" href="index.html">← Continue Shopping</a>
+    <a href="cart.html" class="cart-link">🛒 Cart (<span data-cart-count>0</span>)</a>	
+  </header>
+
+  <main>
+    <h1>Your Cart</h1>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Variant</th>
+          <th>Color</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="cart-body"></tbody>
+    </table>
+    <div class="total" id="cart-summary"></div>
+  </main>
+
+  <script src="cart.js"></script>
+  <script>
+    async function render() {
+      const items = await Cart.get();
+      const body  = document.getElementById('cart-body');
+      const sum   = document.getElementById('cart-summary');
+      body.innerHTML = '';
+
+      if (!items.length) {
+        body.innerHTML = '<tr><td colspan="7">Your cart is empty.</td></tr>';
+        sum.innerHTML = '';
+        await Cart.notify();
+        return;
+      }
+
+      for (const i of items) {
+        const key = Cart.uid(i);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <div class="row-title">
+              ${i.image ? `<img class="thumb" src="${i.image}" alt="">` : ''}
+              <strong>${i.title}</strong>
+            </div>
+          </td>
+          <td>${i.variant || '-'}</td>
+          <td>${i.color || '-'}</td>
+          <td>₪${Number(i.price).toFixed(2)}</td>
+          <td><input class="qty" type="number" min="1" value="${i.qty}"></td>
+          <td>₪${(Number(i.price) * Number(i.qty)).toFixed(2)}</td>
+          <td class="actions"><button data-remove>Remove</button></td>
+        `;
+
+        tr.querySelector('.qty').addEventListener('change', async (e) => {
+          const qty = parseInt(e.target.value || '1', 10);
+          await Cart.setQty(key, qty);
+          render();
+        });
+
+        tr.querySelector('[data-remove]').addEventListener('click', async () => {
+          await Cart.remove(key);
+          render();
+        });
+
+        body.appendChild(tr);
+      }
+
+      const t = await Cart.totals();
+      sum.innerHTML = `
+        <h3>Items: ${t.count}</h3>
+        <h3>Subtotal: ₪${t.subtotal.toFixed(2)}</h3>
+        <button id="clear-btn" class="clear">Clear Cart</button>
+      `;
+
+      document.getElementById('clear-btn').addEventListener('click', async (e) => {
+        e.preventDefault();
+        await Cart.clear();
+        render();
+      });
+
+      await Cart.notify();
+    }
+
+    document.addEventListener('DOMContentLoaded', render);
+    window.addEventListener('pageshow', render);
+    window.addEventListener('cart:changed', render);
+  </script>
+</body>
+</html>

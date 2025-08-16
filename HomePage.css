@@ -1,0 +1,80 @@
+body {
+
+    background-image: url(HomePhoto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+h1 {
+
+    font-family: fantasy;
+    text-align: center;
+    font-size: 300%;
+
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    font-size: 150%;
+}
+
+.center {
+    font-family: cursive;
+    font-size: 150%;
+    color: snow;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 255, 255);
+
+}
+
+
+.men {
+    width: 20%;
+    height: 20%;
+    border-style: solid;
+
+}
+
+
+
+button {
+
+    background-color: rgba(105, 109, 93, 255);
+    align-items: center;
+
+    border-radius: 30%;
+
+    border: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #63d3f1 100%);
+}
+.site-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.site-header h1 {
+  margin: 0;
+  text-align: center;
+}
+.site-header .cart-link {
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+}
+.cart-link {
+  color: #00ffcc;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.cart-link:hover {
+  color: #ff6600;  /* כתום כשעוברים עם העכבר */
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pants</title>
+  <link rel="stylesheet" href="Pants.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Hello and welcome to Viko's shop</h1>
+  <a href="cart.html" class="cart-link">🛒 Cart (<span data-cart-count>0</span>)</a>
+</header>
+
+
+
+  <p class="center">Here are some of our Pants 🩳:</p>
+  <p class="center">Hover over the items to see their prices</p>
+
+  <div class="item-container">
+    <div class="item">
+      <img class="men" id="pants1-img" title="140 ₪" src="pants1 - stone.webp" alt="">
+      <select id="pants1-color" class="color-select">
+        <option selected value="pants1 - stone.webp" data-color="Stone">Stone</option>
+        <option value="pants1 - camel.webp" data-color="Camel">Camel</option>
+        <option value="pants1 - Haki.webp" data-color="Haki">Haki</option>
+      </select>
+      <label for="size1" class="sizes-label">Choose your size:</label>
+      <select name="size" id="size1" class="sizes">
+        <option value=""></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <button
+        id="pants1-add"
+        class="btn-add"
+        data-add-to-cart
+        data-id="pants1"
+        data-title="Pants 1"
+        data-price="140"
+        data-color="Stone"
+        data-size=""
+        data-variant=""
+        data-image="pants1 - stone.webp"
+        data-qty="1">🛒 Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img class="men" id="pants2-img" title="150 ₪" src="Pants2 - white.webp" alt="">
+      <select id="pants2-color" class="color-select">
+        <option selected value="Pants2 - white.webp" data-color="White">White</option>
+        <option value="Pants2 - Stone.webp" data-color="Stone">Stone</option>
+        <option value="Pants2 - Black.webp" data-color="Black">Black</option>
+      </select>
+      <label for="size2" class="sizes-label">Choose your size:</label>
+      <select name="size" id="size2" class="sizes">
+        <option value=""></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <button
+        id="pants2-add"
+        class="btn-add"
+        data-add-to-cart
+        data-id="pants2"
+        data-title="Pants 2"
+        data-price="150"
+        data-color="White"
+        data-size=""
+        data-variant=""
+        data-image="Pants2 - white.webp"
+        data-qty="1">🛒 Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img class="men" id="pants3-img" title="140 ₪" src="pants3.webp" alt="">
+      <select id="pants3-color" class="color-select">
+        <option selected value="pants3.webp" data-color="Default">Default</option>
+        <option value="pants3 - Brown.webp" data-color="Brown">Brown</option>
+        <option value="Pants3 - Stone.webp" data-color="Stone">Stone</option>
+      </select>
+      <label for="size3" class="sizes-label">Choose your size:</label>
+      <select name="size" id="size3" class="sizes">
+        <option value=""></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <button
+        id="pants3-add"
+        class="btn-add"
+        data-add-to-cart
+        data-id="pants3"
+        data-title="Pants 3"
+        data-price="140"
+        data-color="Default"
+        data-size=""
+        data-variant=""
+        data-image="pants3.webp"
+        data-qty="1">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <p><a href="index.html"><button>Homepage</button></a></p>
+
+  <script src="cart.js"></script>
+  <script>
+    function wireItem(imgId, selectId, sizeId, btnId) {
+      const img = document.getElementById(imgId);
+      const sel = document.getElementById(selectId);
+      const size = document.getElementById(sizeId);
+      const btn = document.getElementById(btnId);
+      function updateFromColor() {
+        const opt = sel.options[sel.selectedIndex];
+        img.src = opt.value;
+        btn.dataset.color = opt.dataset.color || '';
+        btn.dataset.image = opt.value || '';
+      }
+      function updateFromSize() { btn.dataset.size = size.value || ''; }
+      sel.addEventListener('change', updateFromColor);
+      size.addEventListener('change', updateFromSize);
+      updateFromColor();
+      updateFromSize();
+    }
+    wireItem('pants1-img','pants1-color','size1','pants1-add');
+    wireItem('pants2-img','pants2-color','size2','pants2-add');
+    wireItem('pants3-img','pants3-color','size3','pants3-add');
+  </script>
+</body>
+</html>
